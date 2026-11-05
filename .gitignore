@@ -17,3 +17,6 @@ data/processed/*.csv
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Material de referência local (não versionado)
+referencia/
