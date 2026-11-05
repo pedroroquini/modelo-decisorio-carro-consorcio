@@ -9,16 +9,17 @@ universo:
   tipo_veiculo: carro
 
 consorcio:                   # valores do case; troque pelos da sua cota
-  valor_carta: 85000
-  pct_lance_livre: 0.54
-  pct_lance_embutido: 0.25
+  valor_carta: 85758.91      # valor da carta da cota (planilha simulacao_consorcio)
+  pct_lance_total: 0.54      # lance total sobre a carta; INCLUI o lance embutido
+  pct_lance_embutido: 0.25   # parte do lance que sai da própria carta (reduz o crédito)
+                             # o restante do lance (total - embutido) é pago com recurso próprio
   valor_ja_pago: 23723.98
   parcelas_restantes: 39
-  fator_total_devedor: 1.1444  # total devedor / carta; confirmar no extrato da administradora
+  fator_total_devedor: 1.1444  # total devedor / carta. FONTE PENDENTE: confirmar no extrato da administradora
 
 recursos:
   recurso_proprio: 25000
-  juros_complemento_cartao: 0.20   # acréscimo total sobre o complemento parcelado
+  juros_complemento_cartao: 0.20   # acréscimo total sobre o complemento parcelado. FONTE PENDENTE: simulação do cartão
   parcelas_cartao: 12
 
 uso:
@@ -27,8 +28,8 @@ uso:
   queda_km_por_ano: 390      # KBB Brasil (2019); opcional
 
 financeiro:
-  taxa_desconto_real_aa: 0.06    # rendimento real esperado do dinheiro (custo de oportunidade)
-  aliquota_ipva: 0.04            # RJ
+  taxa_desconto_real_aa: 0.06    # rendimento real esperado do dinheiro (custo de oportunidade). FONTE PENDENTE: sugestão = taxa real do Tesouro IPCA+ na data da decisão
+  aliquota_ipva: 0.04            # RJ. FONTE PENDENTE: citar a lei estadual / tabela da SEFAZ-RJ vigente
   desconto_mercado_sobre_fipe: 0.0  # ajustado com anúncios reais dos finalistas
   custo_mensal_referencia: null  # opcional; só aparece como comparação na etapa 06
 
@@ -48,3 +49,11 @@ simulacao:
 decisao:                     # preenchido pelo usuário na etapa 06
   filtros: {}
   pesos: {}
+
+dados:                       # de onde vêm os dados e onde ficam os intermediários
+  dataset_fipe: alanwgt/fipex-veiculos-brasil   # Hugging Face
+  split: train
+  serie_ipca_bcb: 433        # IPCA mensal (%), SGS do Banco Central
+  dir_raw: data/raw          # caminhos relativos à raiz do repositório
+  dir_processed: data/processed
+  cache_regex: data/processed/cache_regex_nome_modelo.parquet
