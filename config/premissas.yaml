@@ -5,7 +5,7 @@ universo:
   fipe_min: 50000            # R$, aplicado ao mês de referência mais recente
   fipe_max: 85000
   ano_modelo_min: 2017
-  codigo_ano_zero_km: 32000  # a FIPE usa 32000 para veículos zero km
+  codigo_ano_zero_km: 32000  # a FIPE usa 32000 para zero km; no fipeX o zero km vem em `zero_km` com ano nulo (os dois são excluídos)
   tipo_veiculo: carro
 
 consorcio:                   # valores do case; troque pelos da sua cota
@@ -53,6 +53,11 @@ decisao:                     # preenchido pelo usuário na etapa 06
 dados:                       # de onde vêm os dados e onde ficam os intermediários
   dataset_fipe: alanwgt/fipex-veiculos-brasil   # Hugging Face
   split: train
+  # Arquivo usado: versão consolidada ("merged"), com o nome atual do modelo em todo o histórico.
+  # Não usar o split `train` do Hugging Face: ele soma a versão original e a merged
+  # (cada preço aparece duas vezes). Conferido em 2026-11: 9.631.829 linhas em cada arquivo.
+  arquivo_fipe: fipex-prices-latest-merged.parquet
+  url_base_fipe: https://huggingface.co/datasets/alanwgt/fipex-veiculos-brasil/resolve/main
   serie_ipca_bcb: 433        # IPCA mensal (%), SGS do Banco Central
   dir_raw: data/raw          # caminhos relativos à raiz do repositório
   dir_processed: data/processed

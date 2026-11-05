@@ -100,6 +100,8 @@ REGRAS: list[tuple[str, Callable[[Any], bool], str]] = [
     ("dados.dataset_fipe", lambda x: isinstance(x, str) and "/" in x, "texto 'dono/nome'"),
     ("dados.split", lambda x: isinstance(x, str) and x != "", "texto"),
     ("dados.serie_ipca_bcb", _eh_inteiro, "inteiro"),
+    ("dados.arquivo_fipe", lambda x: isinstance(x, str) and x.endswith(".parquet"), "nome de arquivo .parquet"),
+    ("dados.url_base_fipe", lambda x: isinstance(x, str) and x.startswith("https://"), "URL https"),
     ("dados.dir_raw", lambda x: isinstance(x, str) and x != "", "texto"),
     ("dados.dir_processed", lambda x: isinstance(x, str) and x != "", "texto"),
     ("dados.cache_regex", lambda x: isinstance(x, str) and x.endswith(".parquet"), "caminho .parquet"),
