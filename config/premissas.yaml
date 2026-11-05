@@ -1,0 +1,50 @@
+# Premissas do modelo. Tudo aqui é editável pelo usuário.
+# Cada valor traz a fonte ou a origem logo ao lado.
+
+universo:
+  fipe_min: 50000            # R$, aplicado ao mês de referência mais recente
+  fipe_max: 85000
+  ano_modelo_min: 2017
+  codigo_ano_zero_km: 32000  # a FIPE usa 32000 para veículos zero km
+  tipo_veiculo: carro
+
+consorcio:                   # valores do case; troque pelos da sua cota
+  valor_carta: 85000
+  pct_lance_livre: 0.54
+  pct_lance_embutido: 0.25
+  valor_ja_pago: 23723.98
+  parcelas_restantes: 39
+  fator_total_devedor: 1.1444  # total devedor / carta; confirmar no extrato da administradora
+
+recursos:
+  recurso_proprio: 25000
+  juros_complemento_cartao: 0.20   # acréscimo total sobre o complemento parcelado
+  parcelas_cartao: 12
+
+uso:
+  km_ano: 12900              # média brasileira no 1º ano de uso (KBB Brasil, 2019)
+  aplicar_queda_km_idade: false
+  queda_km_por_ano: 390      # KBB Brasil (2019); opcional
+
+financeiro:
+  taxa_desconto_real_aa: 0.06    # rendimento real esperado do dinheiro (custo de oportunidade)
+  aliquota_ipva: 0.04            # RJ
+  desconto_mercado_sobre_fipe: 0.0  # ajustado com anúncios reais dos finalistas
+  custo_mensal_referencia: null  # opcional; só aparece como comparação na etapa 06
+
+horizonte:
+  anos_max: 6
+
+modelo_residual:
+  horizontes_anos: [1, 2, 3, 4, 5, 6]
+  quantis: [0.1, 0.5, 0.9]
+  janela_teste_meses: 12
+  regime_choque: ["2020-01", "2022-12"]   # avaliado separadamente no backtest
+
+simulacao:
+  n_cenarios: 10000
+  semente: 42
+
+decisao:                     # preenchido pelo usuário na etapa 06
+  filtros: {}
+  pesos: {}

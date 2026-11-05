@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Jupyter / Colab
+.ipynb_checkpoints/
+
+# Dados pesados (o dataset completo não vai para o repositório)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*.parquet
+data/processed/*.csv
+
+# Sistema
+.DS_Store
+Thumbs.db
