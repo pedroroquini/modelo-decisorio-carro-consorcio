@@ -46,3 +46,18 @@ def filtrar_universo(df: pd.DataFrame, p: dict, utilitarios: list[str]) -> tuple
     excluir = faixa["motivo_exclusao"] != ""
     universo = faixa[~excluir].drop(columns="motivo_exclusao")
     return universo, faixa[excluir]
+
+
+def adicionar_fabricante(df: pd.DataFrame, tabela: pd.DataFrame) -> pd.DataFrame:
+    """Acrescenta a coluna `fabricante` (nome padronizado da marca).
+
+    A FIPE escreve a mesma fabricante de formas diferentes ("Caoa Chery" e "Caoa Chery/Chery",
+    "GM - Chevrolet"). A tabela data/ref/fabricantes.csv liga cada `nome_marca` a um nome único.
+    Levanta ValueError se alguma marca não estiver na tabela, para nenhuma marca nova passar em silêncio.
+    """
+    mapa = dict(zip(tabela["nome_marca"], tabela["fabricante"]))
+    marcas = df["nome_marca"].astype(str)
+    faltando = sorted(set(marcas) - set(mapa))
+    if faltando:
+        raise ValueError(f"Marcas sem fabricante em fabricantes.csv: {faltando}")
+    return df.assign(fabricante=marcas.map(mapa))
