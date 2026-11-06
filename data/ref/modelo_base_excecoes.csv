@@ -1,0 +1,14 @@
+prefixo,modelo_base,motivo
+DUSTER OROCH,OROCH,picape derivada do Duster; nome começa com DUSTER
+GRAND C4,GRAND C4,modelo distinto do C4
+GRAND SIENA,GRAND SIENA,modelo distinto do Siena
+C4 CACTUS,C4 CACTUS,modelo distinto do C4
+C4 LOUNGE,C4 LOUNGE,sedã distinto do C4 hatch
+C4 PICASSO,C4 PICASSO,minivan distinta do C4
+CLASSE B,CLASSE B,primeiro token é a palavra CLASSE
+XC 60,XC60,FIPE separa XC e 60
+SX4 S-CROSS,S-CROSS,mesmo modelo que S-CROSS
+PALIO WEEK,PALIO WEEKEND,perua distinta do Palio (WEEK. e WEEKEND)
+ONIX SEDAN,ONIX PLUS,sedã (Onix Plus) separado do hatch (decisão do autor em 2026-11-06)
+ONIX SED,ONIX PLUS,sedã abreviado SED.
+ONIX SD,ONIX PLUS,sedã abreviado SD.
