@@ -19,3 +19,5 @@ MINITRUCK,caminhão leve
 DELIVERY,caminhão leve elétrico
 E.CO,utilitário elétrico (cargo/truck)
 BUGGY,buggy (fora de estrada)
+WAY,fora de estrada (decisão do autor em 2026-11-06)
+JIMNY,fora de estrada (decisão do autor em 2026-11-06)

@@ -15,11 +15,11 @@ consorcio:                   # valores do case; troque pelos da sua cota
                              # o restante do lance (total - embutido) é pago com recurso próprio
   valor_ja_pago: 23723.98
   parcelas_restantes: 39
-  fator_total_devedor: 1.1444  # total devedor / carta. FONTE PENDENTE: confirmar no extrato da administradora
+  fator_total_devedor: 1.1444  # total devedor / carta. Fonte: extrato da administradora, confirmado pelo autor em 2026-11-06
 
 recursos:
   recurso_proprio: 25000
-  juros_complemento_cartao: 0.20   # acréscimo total sobre o complemento parcelado. FONTE PENDENTE: simulação do cartão
+  juros_complemento_cartao: 0.20   # acréscimo total sobre o complemento parcelado. Fonte: simulação do cartão, confirmado pelo autor em 2026-11-06
   parcelas_cartao: 12
 
 uso:
@@ -28,8 +28,8 @@ uso:
   queda_km_por_ano: 390      # KBB Brasil (2019); opcional
 
 financeiro:
-  taxa_desconto_real_aa: 0.06    # rendimento real esperado do dinheiro (custo de oportunidade). FONTE PENDENTE: sugestão = taxa real do Tesouro IPCA+ na data da decisão
-  aliquota_ipva: 0.04            # RJ. FONTE PENDENTE: citar a lei estadual / tabela da SEFAZ-RJ vigente
+  taxa_desconto_real_aa: 0.0786  # custo de oportunidade real. Fonte: Tesouro IPCA+ 2032 (Tesouro Direto), IPCA + 7,86% a.a., consultado em 2026-11-06; taxa bruta, antes do IR e da custódia
+  aliquota_ipva: 0.04            # RJ, carro flex/gasolina. Confirmado pelo autor em 2026-11-06
   desconto_mercado_sobre_fipe: 0.0  # ajustado com anúncios reais dos finalistas
   custo_mensal_referencia: null  # opcional; só aparece como comparação na etapa 06
 
